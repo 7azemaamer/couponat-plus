@@ -9,4 +9,42 @@
   --accent: #dafd54;
   --hover: #2e4057;
   --light-gray: #f1f1f1;
+  --dark-gray: #acacac;
+}
+
+.active-nav {
+  background-color: var(--accent);
+  position: relative;
+}
+
+.active-nav::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 20px solid transparent;
+  border-right: 20px solid var(--accent);
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  left: -40px;
+}
+
+.hover-nav {
+  position: relative;
+}
+
+.hover-nav:hover {
+  background-color: var(--accent);
+}
+
+.hover-nav:hover::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 20px solid transparent;
+  border-right: 20px solid var(--accent);
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  left: -40px;
 }
