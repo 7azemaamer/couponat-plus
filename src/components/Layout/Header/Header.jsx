@@ -2,6 +2,7 @@ import { Button } from "@/components/UI/Button";
 import { Search } from "@/components/UI/Search";
 import { navItems } from "@/utils/dummyData";
 import Image from "next/image";
+import React from "react";
 
 export default function Header() {
   return (
