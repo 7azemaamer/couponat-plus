@@ -3,6 +3,7 @@ import { Button } from "@/components/UI/Button";
 import { Search } from "@/components/UI/Search";
 import { navItems } from "@/utils/dummyData";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 
 export default function Header() {
@@ -20,13 +21,15 @@ export default function Header() {
   return (
     <header className="fixed z-50 bg-white right-0 left-0 px-4 md:px-10 top-0">
       <div className="flex justify-between items-center w-full h-[70px] md:h-[100px]">
-        <Image
-          width={150}
-          height={150}
-          alt="couponat plus"
-          src={"/images/logo-w.png"}
-          className="w-32 md:w-auto"
-        />
+        <Link href={"/"}>
+          <Image
+            width={150}
+            height={150}
+            alt="couponat plus"
+            src={"/images/logo-w.png"}
+            className="w-32 md:w-auto"
+          />
+        </Link>
 
         {/* Mobile Menu Button */}
         <button
