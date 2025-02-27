@@ -26,7 +26,7 @@ export const ProductBox = ({ product }) => {
             </h3>
 
             {/* Action Buttonssssssssss */}
-            <div className="bg-accent text-[12px] font-medium py-2 px-2 text-center cursor-pointer w-full">
+            <div className="bg-accent text-[12px] font-medium py-2 px-2 text-center cursor-pointer w-full text-white">
               <a target="_blank" href={product.href || product.link}></a>
               احصل على العرض
             </div>

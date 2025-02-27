@@ -40,7 +40,7 @@ export const CouponBox = ({ coupon }) => {
                   {coupon.couponCode}
                 </div>
                 <div
-                  className="bg-accent text-[12px] font-medium py-2 px-4 cursor-pointer flex items-center"
+                  className="bg-accent text-[12px] font-medium py-2 px-4 text-white cursor-pointer flex items-center"
                   onClick={() => {
                     navigator.clipboard.writeText(coupon.couponCode);
                     Alerter({ children: "تم نسخ الكود" });
@@ -55,7 +55,7 @@ export const CouponBox = ({ coupon }) => {
               <div className="relative flex justify-end border-gray-300 border-dotted border">
                 <button
                   onClick={() => setIsOpen(true)}
-                  className="absolute top-0 bottom-0 right-0 left-10 hover:left-14 transition-all duration-200 bg-accent text-[12px] font-medium py-2 px-4 cursor-pointer flex items-center"
+                  className="absolute top-0 text-white bottom-0 right-0 left-10 hover:left-14 transition-all duration-200 bg-accent text-[12px] font-medium py-2 px-4 cursor-pointer flex items-center"
                 >
                   عرض الكوبون
                 </button>
@@ -70,7 +70,7 @@ export const CouponBox = ({ coupon }) => {
               </div>
             </>
           ) : (
-            <div className="bg-accent text-[12px] font-medium py-2 px-2 text-center cursor-pointer w-full">
+            <div className="bg-accent text-[12px] text-white font-medium py-2 px-2 text-center cursor-pointer w-full">
               <a target="_blank" href={coupon.href || coupon.link}></a>
               احصل على العرض
             </div>

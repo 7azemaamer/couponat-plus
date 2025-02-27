@@ -2,6 +2,7 @@ import "./globals.css";
 import Header from "@/components/Layout/Header/Header";
 import { Toaster } from "react-hot-toast";
 import Ads from "@/components/Layout/Ads/Ads";
+import Footer from "@/components/Layout/Footer/Footer";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -21,10 +22,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ar" dir="rtl">
-      <body className={`relative antialiased px-8`}>
+      <body className={`relative antialiaseds`}>
         <Header />
         <div className="mt-28">{children}</div>
         <Ads />
+        <Footer />
         <Toaster />
       </body>
     </html>

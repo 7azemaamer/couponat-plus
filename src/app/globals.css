@@ -6,7 +6,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --primary: #48c279;
-  --accent: #dafd54;
+  --accent: #0E78B8;
   --hover: #2e4057;
   --light-gray: #f1f1f1;
   --dark-gray: #acacac;
@@ -47,4 +47,17 @@
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
   left: -40px;
+}
+.d-container {
+  @apply mx-8;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: var(--light-gray);
+  box-shadow: 0 10px 25px var(--css-shadow);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary) !important;
 }
