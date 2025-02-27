@@ -9,7 +9,7 @@ export const Search = ({ label }) => {
       <button className="bg-accent rounded-l-lg px-3 py-2">
         <svg
           xmlns="URL_ADDRESS.w3.org/2000/svg"
-          className="h-5 w-5"
+          className="h-5 w-5 text-white"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
