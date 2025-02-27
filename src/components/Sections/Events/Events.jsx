@@ -57,7 +57,7 @@ export default function Events() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-8">
           {saleData.banners.map((banner, index) => (
             <div key={index} className="text-center">
-              <Link href={banner.link}>
+              <Link href={"/"}>
                 <img
                   src={banner.imgSrc}
                   alt={`Banner ${index + 1}`}
