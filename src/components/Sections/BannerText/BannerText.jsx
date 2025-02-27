@@ -38,7 +38,7 @@ export default function BannerText() {
       >
         <div className="text-right">
           <h2 className=" hidden md:block text-2xl font-bold ">
-            كوبون السعودية بالأرقام
+            كوبونات بلس بالأرقام
           </h2>
         </div>
         <div className="hidden md:grid grid-cols-2 md:grid-cols-2 gap-6 mt-6 md:mt-0">

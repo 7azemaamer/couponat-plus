@@ -255,7 +255,7 @@ const Footer = () => {
         <div className="mt-12 flex flex-col md:flex-row justify-center items-center">
           <div className="order-2 md:order-1 text-center mt-4 md:mt-0">
             <p className="text-gray-100">
-              حقوق الطبع والنشر © 2025 CouponKSA.com جميع الحقوق محفوظة.
+              حقوق الطبع والنشر © 2025 coponat-plus.com جميع الحقوق محفوظة.
             </p>
           </div>
         </div>

@@ -17,19 +17,25 @@ const OtherCoupon = () => {
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <img
-            src="/images/couponat.png"
+            src="/images/logo-w.png"
             alt="Store Logo"
             className="w-16 h-16 object-contain"
           />
           <div className="text-xs text-gray-600">36046 مرات الاستخدام</div>
         </div>
-        <button className="text-xs text-accent hover:text-primary">مشاركة</button>
+        <button className="text-xs text-accent hover:text-primary">
+          مشاركة
+        </button>
       </div>
 
       <div className="text-right mb-4">
-        <h3 className="text-lg font-bold mb-2">خصم يصل إلى 80% + خصم إضافي 25% لحاملي بطاقات مصرف الراجحي</h3>
+        <h3 className="text-lg font-bold mb-2">
+          خصم يصل إلى 80% + خصم إضافي 25% لحاملي بطاقات مصرف الراجحي
+        </h3>
         <p className="text-sm text-gray-600">
-          احصل على عضوية أمازون برايم في السعودية واستفد من التخصومات الكبيرة المتاحة لحاملي بطاقات الراجحي. هذا العرض الرائع متوفر لفترة محدودة فقط، فسارع للإستفادة منه وتسوق بلا حدود لمنتجاتك المفضلة على أمازون.
+          احصل على عضوية أمازون برايم في السعودية واستفد من التخصومات الكبيرة
+          المتاحة لحاملي بطاقات الراجحي. هذا العرض الرائع متوفر لفترة محدودة
+          فقط، فسارع للإستفادة منه وتسوق بلا حدود لمنتجاتك المفضلة على أمازون.
         </p>
       </div>
 
