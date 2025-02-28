@@ -667,6 +667,14 @@ export const couponsSectionData = [
     name: "شائع",
     coupon: [
       {
+        store: "صفوة الجوف",
+        logo: "/images/coupons/safwat.avif",
+        offerImage: "/images/slider/banner.jpg",
+        title: "كود خصم صفوة الجوف 2025 أقوى كوبون",
+        couponCode: "B1",
+        couponType: "open",
+      },
+      {
         store: "امازون",
         logo: "https://couponksa.com/img/logo/amazon-sa.jpg",
         offerImage: "https://couponksa.com/img/offers/amazon-ramdansale.jpg",

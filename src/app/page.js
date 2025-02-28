@@ -22,6 +22,11 @@ export default function Home() {
             src: "/images/slider/slide2.jpg",
             alt: "Second Banner",
           },
+          {
+            src: "/images/slider/banner.jpg",
+            alt: "THird Banner",
+            href: "/coupons/safwa",
+          },
         ]}
       />
       {/* Stores Section */}

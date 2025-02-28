@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-accent text-white py-12 text-sm">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-8 ">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 ">
           {/* Company Info */}
           <div className="flex flex-col items-center">
             <p className="mb-4  max-w-md">
@@ -112,7 +112,8 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-          <div className="flex flex-col items-center justify-start">
+
+          {/* <div className="flex flex-col items-center justify-start">
             <h3 className="text-xl mb-4">شركتنا</h3>
             <ul className="space-y-2">
               <li>
@@ -146,10 +147,10 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Start */}
-          <div className="flex flex-col items-center">
+          {/* <div className="flex flex-col items-center">
             <h3 className="text-xl mb-4">ابدء</h3>
             <ul className="space-y-2">
               <li>
@@ -183,7 +184,7 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Best Stores */}
           <div className="flex flex-col items-center">
