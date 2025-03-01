@@ -83,41 +83,53 @@ const MarketingSection = () => {
             <br />
             <br />
           </h4>
-          <table className="w-1/2 border border-black text-center">
-            <tbody>
+          <table className="w-full md:w-3/4 lg:w-2/3 border-collapse rounded-lg overflow-hidden shadow-lg mb-6">
+            <thead className="bg-primary text-white">
               <tr>
-                <td className="border-r border-b border-black">
+                <th className="p-3 text-right">
                   <strong>ماركة</strong>
-                </td>
-                <td className="border-r border-b border-black">
+                </th>
+                <th className="p-3 text-right">
                   <strong>تفاصيل الخصم</strong>
-                </td>
-                <td className="border-b border-black">
+                </th>
+                <th className="p-3 text-right">
                   <strong>رمز الكوبون</strong>
-                </td>
+                </th>
               </tr>
-              <tr>
-                <td className="border-r border-b border-black">
-                  اتش اند ام السعودية
-                </td>
-                <td className="border-r border-b border-black">
+            </thead>
+            <tbody>
+              <tr className="bg-white hover:bg-gray-50 transition-colors">
+                <td className="p-3 border-t">اتش اند ام السعودية</td>
+                <td className="p-3 border-t">
                   خصم يصل إلى 70٪ + خصم إضافي 10٪ على كل شيء
                 </td>
-                <td className="border-b border-black">CAE10</td>
+                <td className="p-3 border-t">
+                  <span className="bg-gray-100 text-primary font-bold px-3 py-1 rounded-full">
+                    CAE10
+                  </span>
+                </td>
               </tr>
-              <tr>
-                <td className="border-r border-b border-black">ماكس فاشن</td>
-                <td className="border-r border-b border-black">
+              <tr className="bg-white hover:bg-gray-50 transition-colors">
+                <td className="p-3 border-t">ماكس فاشن</td>
+                <td className="p-3 border-t">
                   خصم يصل إلى 70٪ + خصم إضافي 10٪ على كل شيء
                 </td>
-                <td className="border-b border-black">CKSA</td>
+                <td className="p-3 border-t">
+                  <span className="bg-gray-100 text-primary font-bold px-3 py-1 rounded-full">
+                    CKSA
+                  </span>
+                </td>
               </tr>
-              <tr>
-                <td className="border-r border-black">ترينديول</td>
-                <td className="border-r border-black">
+              <tr className="bg-white hover:bg-gray-50 transition-colors">
+                <td className="p-3 border-t">ترينديول</td>
+                <td className="p-3 border-t">
                   خصم يصل إلى 75٪ + خصم إضافي 15٪ على كل شيء
                 </td>
-                <td>CKSA</td>
+                <td className="p-3 border-t">
+                  <span className="bg-gray-100 text-primary font-bold px-3 py-1 rounded-full">
+                    CKSA
+                  </span>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -132,32 +144,40 @@ const MarketingSection = () => {
             والمنتجات تنتظرك لإختيار منتجاتك المفضلة.
           </p>
 
-          <table className="w-1/2 border border-black text-center">
-            <tbody>
+          <table className="w-full md:w-3/4 lg:w-2/3 border-collapse rounded-lg overflow-hidden shadow-lg mb-6">
+            <thead className="bg-primary text-white">
               <tr>
-                <td className="border-r border-b border-black">
+                <th className="p-3 text-right">
                   <strong>ماركة</strong>
-                </td>
-                <td className="border-r border-b border-black">
+                </th>
+                <th className="p-3 text-right">
                   <strong>تفاصيل الخصم</strong>
-                </td>
-                <td className="border-b border-black">
+                </th>
+                <th className="p-3 text-right">
                   <strong>رمز ترويجي</strong>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="bg-white hover:bg-gray-50 transition-colors">
+                <td className="p-3 border-t">سيفورا</td>
+                <td className="p-3 border-t">خصم ثابت 5٪ على كل شيء</td>
+                <td className="p-3 border-t">
+                  <span className="bg-gray-100 text-primary font-bold px-3 py-1 rounded-full">
+                    CKSA
+                  </span>
                 </td>
               </tr>
-              <tr>
-                <td className="border-r border-b border-black">سيفورا</td>
-                <td className="border-r border-b border-black">
-                  خصم ثابت 5٪ على كل شيء
-                </td>
-                <td className="border-b border-black">CKSA</td>
-              </tr>
-              <tr>
-                <td className="border-r border-black">باث اند بودي وركس</td>
-                <td className="border-r border-black">
+              <tr className="bg-white hover:bg-gray-50 transition-colors">
+                <td className="p-3 border-t">باث اند بودي وركس</td>
+                <td className="p-3 border-t">
                   خصم يصل إلى 75٪ + خصم إضافي 5٪ عبر الموقع
                 </td>
-                <td>CAE23</td>
+                <td className="p-3 border-t">
+                  <span className="bg-gray-100 text-primary font-bold px-3 py-1 rounded-full">
+                    CAE23
+                  </span>
+                </td>
               </tr>
             </tbody>
           </table>

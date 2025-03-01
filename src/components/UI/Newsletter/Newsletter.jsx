@@ -27,7 +27,7 @@ const Newsletter = () => {
         <div className="w-full lg:w-1/2 ">
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col sm:flex-row gap-3 w-full items-center"
+            className="flex gap-3 w-full items-center"
           >
             <input
               type="email"
@@ -39,7 +39,7 @@ const Newsletter = () => {
             />
             <button
               type="submit"
-              className="bg-gray-800 text-white px-4 sm:px-6 py-3 text-base sm:text-lg md:text-xl shadow-md hover:bg-foreground transition-all whitespace-nowrap rounded-md"
+              className="bg-gray-800  text-white px-4 sm:px-6 py-3 text-base sm:text-lg md:text-xl shadow-md hover:bg-foreground transition-all whitespace-nowrap rounded-md"
             >
               {status || "اشترك الآن"}
             </button>

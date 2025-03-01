@@ -66,6 +66,12 @@
   .d-container {
     @apply mx-3;
   }
+  .active-nav::before {
+    display: none;
+  }
+  .hover-nav:hover::before{
+    display: none;
+  }
 }
 
 html {

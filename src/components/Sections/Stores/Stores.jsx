@@ -34,27 +34,25 @@ export default function Stores({ className }) {
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-4 md:mb-6">
         <Title className="mb-3 lg:mb-0">أفضل المتاجر للتسوق منها</Title>
 
-        <div className="w-full lg:w-auto overflow-x-auto -mx-4 px-4 md:-mx-0 md:px-0">
-          <ul className="flex flex-col md:flex-row space-x-2 md:space-x-4 pb-2 min-w-max">
+        <div className="w-full lg:w-auto overflow-x-auto rounded-lg shadow-sm border border-gray-100">
+          <ul className="flex flex-nowrap min-w-max bg-gray-50 p-1 rounded-lg">
             {tabs.map((tab) => (
               <li
                 key={tab.id}
                 onClick={() => handleTabChange(tab.id)}
-                className={`flex items-center px-3 md:px-4 py-1 md:py-2 cursor-pointer rounded-md whitespace-nowrap transition-all duration-200 ${
+                className={`flex items-center px-3 md:px-4 py-2 cursor-pointer rounded-md whitespace-nowrap transition-all duration-200 ${
                   tab.isActive
-                    ? "border-b bg-opacity-10 text-primary border-primary"
-                    : "hover:bg-gray-100"
+                    ? "bg-white text-primary shadow-sm font-medium"
+                    : "hover:bg-gray-100 text-gray-600"
                 }`}
               >
-                <div className="flex items-center gap-1 md:gap-2">
+                <div className="flex items-center gap-1.5 md:gap-2">
                   <img
                     src={tab.icon}
                     alt={tab.title}
-                    className="w-5 h-5 md:w-6 md:h-6 object-contain"
+                    className="w-4 h-4 md:w-5 md:h-5 object-contain"
                   />
-                  <span className="text-xs md:text-sm font-medium">
-                    {tab.title}
-                  </span>
+                  <span className="text-xs md:text-sm">{tab.title}</span>
                 </div>
               </li>
             ))}

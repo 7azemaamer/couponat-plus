@@ -50,16 +50,22 @@ export default function Coupons({ className }) {
                 key={tab.id}
                 onClick={() => handleTabChange(tab.id)}
                 className={`${
-                  tab.isActive ? "active-nav text-white" : "hover-nav"
-                } px-3 md:px-4 py-2 cursor-pointer md:min-w-60 `}
+                  tab.isActive
+                    ? "active-nav text-white font-semibold"
+                    : "hover-nav text-white-700"
+                } px-3 md:px-4 py-2 cursor-pointer md:min-w-60 rounded transition-all duration-200 flex items-center`}
               >
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 w-full">
                   <img
                     src={tab.icon}
                     alt={tab.name}
-                    className="w-5 h-5 md:w-6 md:h-6 object-contain"
+                    className={`w-5 h-5 md:w-6 md:h-6 object-contain`}
                   />
-                  <span className="text-xs md:text-sm font-medium">
+                  <span
+                    className={`text-xs md:text-sm font-medium whitespace-nowrap hover:text-white ${
+                      tab.isActive ? "text-white" : ""
+                    }`}
+                  >
                     {tab.name}
                   </span>
                 </div>
