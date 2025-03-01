@@ -227,56 +227,48 @@ export const storesSectionData = [
       {
         name: "امازون",
         image: "https://couponksa.com/img/logo/amazon-sa.jpg",
-
         coupons: 49,
         link: "/stores/amazon",
       },
       {
         name: "نون",
         image: "https://couponksa.com/img/logo/noon.jpg",
-
         coupons: 32,
         link: "/stores/noon",
       },
       {
         name: "فارفيتش",
         image: "https://couponksa.com/img/logo/farfetch.jpg",
-
         coupons: 9,
         link: "/stores/farfetch",
       },
       {
         name: "اديداس",
         image: "https://couponksa.com/img/logo/adidas-1.jpg",
-
         coupons: 15,
         link: "/stores/adidas",
       },
       {
         name: "علي إكسبريس",
         image: "https://couponksa.com/img/logo/aliexpress-1.jpeg",
-
         coupons: 24,
         link: "/stores/aliexpress",
       },
       {
         name: "تيمو",
         image: "https://couponksa.com/img/logo/temu.jpg",
-
         coupons: 19,
         link: "/stores/temu",
       },
       {
         name: "فلاي ناس",
         image: "https://couponksa.com/img/logo/flynas.jpg",
-
         coupons: 16,
         link: "/stores/flynas",
       },
       {
         name: "بوكينج.كوم",
         image: "https://couponksa.com/img/logo/bookingcom.jpg",
-
         coupons: 14,
         link: "/stores/booking.com",
       },
