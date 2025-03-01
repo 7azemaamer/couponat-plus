@@ -3,8 +3,8 @@ import React from "react";
 const MarketingSection = () => {
   return (
     <section className="p-4 md:p-6 lg:p-10 d-container text-gray-900">
-      <div class="row">
-        <div class="footer-content">
+      <div className="row">
+        <div className="footer-content">
           <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4">
             اعثر على تجربة تسوق مثيرة عبر الإنترنت مشتريات كبيرة مع خصومات أكبر!
           </h2>

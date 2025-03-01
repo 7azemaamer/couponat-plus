@@ -51,7 +51,7 @@ export default function Slider({
 
   return (
     <div className="relative w-full overflow-hidden rounded-lg">
-      <div className="relative w-full min-h-[80px] md:min-h-[200px]">
+      <div className="relative w-full min-h-[80px] md:min-h-[300px]">
         {images.map((img, index) => {
           let positionClasses =
             "absolute top-0 left-0 w-full transition-transform duration-1500 ease-in-out";
