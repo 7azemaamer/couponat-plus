@@ -4,11 +4,18 @@ import { Search } from "@/components/UI/Search";
 import { navItems } from "@/utils/dummyData";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useAuth } from "@/context/AuthContext";
+import { usePathname } from "next/navigation";
+import { FaUser, FaSignOutAlt } from "react-icons/fa";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+  const { user, isAuthenticated, logout } = useAuth();
+  const pathname = usePathname();
 
   const toggleSubmenu = (index) => {
     if (activeSubmenu === index) {
@@ -16,6 +23,38 @@ export default function Header() {
     } else {
       setActiveSubmenu(index);
     }
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setMobileMenuOpen(false);
+    setIsUserMenuOpen(false);
+  }, [pathname]);
+
+  const toggleMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const toggleUserMenu = () => {
+    setIsUserMenuOpen(!isUserMenuOpen);
+  };
+
+  const handleLogout = () => {
+    logout();
+    setIsUserMenuOpen(false);
   };
 
   return (
@@ -32,28 +71,37 @@ export default function Header() {
         </Link>
 
         {/* Mobile Menu Button */}
-        <button
-          className="md:hidden flex flex-col justify-center items-center space-y-1.5"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          <span
-            className={`block w-6 h-0.5 bg-gray-600 transition-all duration-300 ${
-              mobileMenuOpen ? "rotate-45 translate-y-2" : ""
-            }`}
-          ></span>
-          <span
-            className={`block w-6 h-0.5 bg-gray-600 transition-all duration-300 ${
-              mobileMenuOpen ? "opacity-0" : ""
-            }`}
-          ></span>
-          <span
-            className={`block w-6 h-0.5 bg-gray-600 transition-all duration-300 ${
-              mobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
-            }`}
-          ></span>
-        </button>
+        <div className="lg:hidden">
+          <button
+            onClick={toggleMenu}
+            className="text-gray-500 hover:text-gray-700 focus:outline-none"
+          >
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              {mobileMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
+        </div>
 
-        {/* Desktop Navigation - Keeping your original design */}
+        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-4 lg:gap-10">
           <ul className="flex gap-4 lg:gap-10">
             {navItems.map((item, index) => (
@@ -111,21 +159,60 @@ export default function Header() {
             ))}
           </ul>
           <Search label={"ابحث عن الكوبونات والمتاجر"} />
-          <a href="#" className="whitespace-nowrap">
-            تسجيل الدخول
-          </a>
-          <Button>إنضم الآن</Button>
+          {isAuthenticated ? (
+            <div className="relative">
+              <button
+                onClick={toggleUserMenu}
+                className="flex items-center gap-2 text-gray-700 hover:text-accent transition-colors"
+              >
+                <span className="text-sm font-medium">
+                  {user?.name || "المستخدم"}
+                </span>
+                <FaUser />
+              </button>
+
+              {isUserMenuOpen && (
+                <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10">
+                  <Link
+                    href="/profile"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 text-right"
+                  >
+                    الملف الشخصي
+                  </Link>
+                  <button
+                    onClick={handleLogout}
+                    className="block w-full px-4 py-2 text-sm text-red-500 hover:bg-gray-100 text-right"
+                  >
+                    تسجيل الخروج
+                  </button>
+                </div>
+              )}
+            </div>
+          ) : (
+            <div className="flex items-center gap-3">
+              <Link
+                href="/login"
+                className="text-gray-700 hover:text-accent transition-colors"
+              >
+                تسجيل الدخول
+              </Link>
+            </div>
+          )}
+          <Button>
+            <Link href="/register" className="font-bold">
+              إنضم الآن
+            </Link>
+          </Button>
         </div>
       </div>
 
-      {/* Mobile Menu - Improved for better mobile usability */}
       <div
         className={`md:hidden bg-white w-full transition-all duration-300 overflow-hidden ${
           mobileMenuOpen ? "max-h-screen shadow-lg" : "max-h-0"
         }`}
       >
         <div className="px-4 py-2">
-          <Search label={"ابحث عن الكوبونات والمتاجر"} />
+          <Search full label={"ابحث عن الكوبونات والمتاجر"} />
         </div>
         <nav className="px-4 py-2">
           <ul className="space-y-2">
@@ -204,10 +291,33 @@ export default function Header() {
           </ul>
         </nav>
         <div className="flex flex-col gap-4 p-4 border-t">
-          <a href="#" className="text-center py-2">
-            تسجيل الدخول
-          </a>
-          <Button className="w-full">إنضم الآن</Button>
+          {isAuthenticated ? (
+            <>
+              <Link href="/profile" className="text-center py-2 text-gray-700">
+                الملف الشخصي
+              </Link>
+              <button
+                onClick={handleLogout}
+                className="text-center py-2 text-red-500"
+              >
+                تسجيل الخروج
+              </button>
+            </>
+          ) : (
+            <div className="flex flex-col space-y-2">
+              <Link href="/login" className="text-center py-2 text-gray-700">
+                تسجيل الدخول
+              </Link>
+            </div>
+          )}
+          <Button className="w-full">
+            <Link
+              href="/register"
+              className="bg-accent text-white px-4 py-2 rounded-md text-center"
+            >
+              إنضم الآن
+            </Link>
+          </Button>
         </div>
       </div>
     </header>

@@ -1,20 +1,45 @@
 import toast from "react-hot-toast";
 
-export const Alerter = ({ children, position, className }) => {
-  return toast.custom(
-    (t) => (
-      <div
-        className={`${
-          className
-            ? className
-            : "bg-primary text-white px-6 py-4 shadow-md rounded-full"
-        } ${t.visible ? "animate-enter" : "animate-leave"}`}
-      >
-        {children}
-      </div>
-    ),
-    {
-      position,
-    }
-  );
+export const Alerter = {
+  success: (message) => {
+    toast.success(message, {
+      style: {
+        background: "var(--accent)",
+        color: "#fff",
+        direction: "rtl",
+      },
+      iconTheme: {
+        primary: "#4CAF50",
+        secondary: "#fff",
+      },
+    });
+  },
+
+  error: (message) => {
+    toast.error(message, {
+      style: {
+        background: "#333",
+        color: "#fff",
+        direction: "rtl",
+      },
+      iconTheme: {
+        primary: "#F44336",
+        secondary: "#fff",
+      },
+    });
+  },
+
+  info: (message) => {
+    toast(message, {
+      style: {
+        background: "#333",
+        color: "#fff",
+        direction: "rtl",
+      },
+      iconTheme: {
+        primary: "#2196F3",
+        secondary: "#fff",
+      },
+    });
+  },
 };
