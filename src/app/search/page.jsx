@@ -1,11 +1,11 @@
 "use client";
 import { useSearchParams } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { CouponBox } from "@/components/UI/Coupon/CouponBox";
 import { StoreBox } from "@/components/UI/Store/StoreBox";
 import SidebarAd from "@/components/Sidebar/SidebarAd";
 
-export default function SearchPage() {
+function SearchContent() {
   const searchParams = useSearchParams();
   const query = searchParams.get("q") || "";
   const [results, setResults] = useState({ coupons: [], stores: [] });
@@ -179,5 +179,20 @@ export default function SearchPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function SearchPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="d-container py-8 text-center">
+          <div className="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-accent"></div>
+          <p className="mt-2 text-gray-600">جاري تحميل الصفحة...</p>
+        </div>
+      }
+    >
+      <SearchContent />
+    </Suspense>
   );
 }
