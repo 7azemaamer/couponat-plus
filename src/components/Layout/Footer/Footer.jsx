@@ -244,10 +244,10 @@ const Footer = () => {
                 <li className="flex items-center justify-center md:justify-start gap-3">
                   <FaEnvelope className="text-primary" />
                   <span className="text-white text-sm">
-                    info@coponat-plus.com
+                    support@coponat-plus.com
                   </span>
                 </li>
-                <li className="flex items-center justify-center md:justify-start gap-3">
+                {/* <li className="flex items-center justify-center md:justify-start gap-3">
                   <FaPhone className="text-primary" />
                   <span className="text-white text-sm">+966 12 345 6789</span>
                 </li>
@@ -256,7 +256,7 @@ const Footer = () => {
                   <span className="text-white text-sm">
                     الرياض، المملكة العربية السعودية
                   </span>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
